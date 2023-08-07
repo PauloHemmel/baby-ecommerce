@@ -1,0 +1,143 @@
+{% spaceless %}
+<!doctype html>
+<html data-theme="{{ settings.extension_id }}" data-store="{{ store.id }}" class="page-{{ pages.current }}" data-theme-name="Baby" data-theme-version="7.1.2">
+
+<head>
+    <!-- tray meta and styles -->
+    {{ html.charset() }}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {{ tray.meta }}
+    {{ tray.styles }}
+
+    <!-- theme css-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700" type="text/css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico"  type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap/bootstrap.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/photoswipe-core.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/photoswipe-default-skin.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/custom.css', {dynamic: true}) }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/testu.css') }}" type="text/css">
+
+    <!-- tray scripts -->
+    {{ tray.analytics }}
+    {{ googleTagManager.header(pages.current, tagManagerData) }}
+</head>
+
+<body>
+    {{ googleTagManager.top(pages.current, tagManagerData) }}
+
+    {% element 'snippets/messages' %}
+
+    {% element 'menu-mobile' %}
+
+    <div class="application">
+
+        {% element 'header' %}
+
+        <div class="nav-full">
+            {% element 'horizontal-nav' %}
+        </div>
+
+        {% element 'snippets/banner-home' %}
+
+        {% if pages.current == 'home' %}
+            <!--banner regua -->
+            {% if not utils.is_mobile and banner.extra1 %}
+                <div class="banner banner-ruler">
+                    {{ banner.extra1 }}
+                </div>
+            {% elseif utils.is_mobile and banner.extra8 %}
+                
+                    <div class="banner banner-ruler">
+                        {{ banner.extra8 }}
+                    </div>
+               
+            {% endif %}
+        {% endif %}
+
+        <main class="site-main container">
+            {% if pages.current != 'home' or pages.current != 'product' %}
+                {% if showLeft %}
+                    {% element 'sidebar_left' %}
+                {% endif %}
+            {% endif %}
+
+            {% if "central" in pages.current %}
+                {% element 'sidebar-central' %}
+            {% endif %}
+
+            <section class="page-content {{ 'central' in pages.current ? 'col-sm-9' : '' }}">
+                {{ content_for_layout }}
+
+                {% if pages.current in ['catalog', 'search'] %}
+                    {% if settings.history_position == 1 %}
+                        <div id="prognoos_ib"></div>
+                        <section class="products-visited col-sm-12">
+                            <h4>{{ Translation('confira_tambem') }}</h4>
+                            <h3 class="related-title">{{ Translation('produtos_visitados') }}</h3>
+                            {% element 'snippets/history' %}
+                        </section>
+                    {% endif %}
+                {% endif %}
+            </section>
+        </main>
+
+        {% element 'footer' %}
+
+        {% if checkout == 'false' %}
+            {% if settings.hottags_position == 2 %}
+            <div class="tagcloud">
+                <h4>As palavras</h4>
+                <h3>{{ Translation('tags_mais_buscadas') }}</h3>
+                {% for tag in tags %}
+                  <a href="{{ tag.url }}" style="font-size: {{ tag.font_size }}%">{{ tag.word }}</a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        {% endif %}
+
+        {% if pages.current in ['catalog', 'search', 'product'] %}
+            {% if settings.history_position == 2 %}
+                <div id="prognoos_ib"></div>
+                <section class="products-visited col-sm-12">
+                    <h4>{{ Translation('confira_tambem') }}</h4>
+                    <h3 class="related-title">{{ Translation('produtos_visitados') }}</h3>
+                    {% element 'snippets/history' %}
+                </section>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    {% element 'snippets/credits' %}
+
+    {% if pages.current != 'login' %}
+        {% element 'snippets/tray_login' %}
+    {% endif %}
+
+    <!-- tray -->
+    {% element 'snippets/modal' %}
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
+    {{ tray.scripts }}
+    {{
+            html.script({
+                '0' : tray.paths.js ~ 'dist/application.min.js?' ~ utils.assets_version,
+                '1' : tray.paths.js ~ 'init.js?' ~ utils.assets_version
+            })
+    }}
+    {% element 'snippets/pageview' %}
+    {{ store.chat }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js" integrity="sha512-0QbL0ph8Tc8g5bLhfVzSqxe9GERORsKhIn1IrpxDAgUsbBGz/V7iSav2zzW325XGd1OMLdL4UiqRJj702IeqnQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- theme scripts-->
+    <script src="{{ asset('js/slick.min.js') }}"></script>
+    <script src="{{ asset('js/photoswipe-core.js') }}"></script>
+    <script src="{{ asset('js/photoswipe-ui.js') }}"></script>
+    <script src="{{ asset('js/photoswipe-init.js') }}"></script>
+    <script src="{{ asset('js/theme.min.js') }}"></script>
+    <script src="{{ asset('js/javas.js') }}"></script>
+
+</body>
+</html>
+{% endspaceless %}

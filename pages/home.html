@@ -1,0 +1,285 @@
+{% if settings.limitProducts %}
+    {% set limitProducts = settings.limitProducts %}
+{% else %}
+    {% set limitProducts = 8 %}
+{% endif %}
+
+{% set showAvailable = settings.show_available_products ? 'available' %}
+
+{% if settings.showcase_1 == "featured" %}
+    {% set showcaseText = "Destaques" %}
+{% elseif settings.showcase_1 == "new" %}
+    {% set showcaseText = "Lan&ccedil;amentos" %}
+{% elseif settings.showcase_1 == "free_shipping" %}
+    {% set showcaseText = "Frete Gr&aacute;tis" %}
+{% elseif settings.showcase_1 == "promotion" %}
+    {% set showcaseText = "Promo&ccedil;&otilde;es" %}
+{% elseif settings.showcase_1 == "top_seller" %}
+    {% set showcaseText = "Mais Vendidos" %}
+{% endif %}
+
+{% if showAvailable %}
+    {% if settings.showcase_1 == "top_seller" %}
+        <div id="prognoos_popv1"></div>	
+        
+        {% set products = Products({
+            'filter': showAvailable,
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %}
+        
+    {% else %}
+        {% set products = Products({
+            'filter': [showAvailable, settings.showcase_1],
+            'limit': limitProducts,
+            'order': 'rand'
+        }) %}
+    {% endif %}
+    
+{% else %}
+    {% if settings.showcase_1 == "top_seller" %}
+        <div id="prognoos_popv1"></div>
+        
+        {% set products = Products({
+            'filter': 'available',
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %} 
+    {% else %}
+        {% set products = Products({
+            'filter': settings.showcase_1,
+            'limit': limitProducts,
+            'order': 'rand'
+        }) %}
+    {% endif %}        
+{% endif %}
+
+{% element 'showcase' { 
+    "products": products,
+    "showcaseTitle": showcaseText
+} %}
+<div class="banners banner-widget-home">
+    <div class="container">
+        <div class="row">
+            {% if not utils.is_mobile and banner.extra2 %}
+                <div class="col-xs-12 col-sm-6 mini-banner3">
+                    {{ banner.extra2 }}
+                </div>
+            {% elseif utils.is_mobile and banner.extra9 %}
+               
+                    <div class="col-xs-12 col-sm-6 mini-banner3">
+                        {{ banner.extra9}}
+                    </div>
+                
+            {% endif %}
+            
+            {% if not utils.is_mobile and banner.extra3 %}
+                <div class="col-xs-12 col-sm-6 mini-banner3">
+                    {{ banner.extra3 }}
+                </div>
+            {% elseif utils.is_mobile and banner.extra10 %}
+               
+                    <div class="col-xs-12 col-sm-6 mini-banner3">
+                        {{ banner.extra10 }}
+                    </div>
+               
+            {% endif %}
+        </div>
+    </div>
+</div> 
+
+{% if settings.showcase_2 == "featured" %}
+    {% set showcaseText = "Destaques" %}
+{% elseif settings.showcase_2 == "new" %}
+    {% set showcaseText = "Lan&ccedil;amentos" %}
+{% elseif settings.showcase_2 == "free_shipping" %}
+    {% set showcaseText = "Frete Gr&aacute;tis" %}
+{% elseif settings.showcase_2 == "promotion" %}
+    {% set showcaseText = "Promo&ccedil;&otilde;es" %}
+{% elseif settings.showcase_2 == "top_seller" %}
+    {% set showcaseText = "Mais Vendidos" %}
+{% endif %}
+
+{% if showAvailable %}
+    {% if settings.showcase_2 == "top_seller" %}
+        <div id="prognoos_popv1"></div>	
+        
+        {% set products = Products({
+            'filter': showAvailable,
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %}
+        
+    {% else %}
+        {% set products = Products({
+            'filter': [showAvailable, settings.showcase_2],
+            'limit': limitProducts,
+            'order': 'rand'
+        }) %}
+    {% endif %}
+    
+{% else %}
+    {% if settings.showcase_2 == "top_seller" %}
+        <div id="prognoos_popv1"></div>
+        
+        {% set products = Products({
+            'filter': 'available',
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %} 
+    {% else %}
+        {% set products = Products({
+            'filter': settings.showcase_2,
+            'limit': limitProducts,
+            'order': 'rand'
+        }) %}
+    {% endif %}        
+{% endif %}
+
+{% element 'showcase' { 
+    "products": products,
+    "showcaseTitle": showcaseText
+} %}
+
+<body>
+    <main id="container">
+        <form id="login_form">
+            <div id="form_header">
+                <h1>Login</h1>
+                <i id="mode_icon" class="fa-sharp fa-solid fa-moon"></i> <!--adicionando função para o icone, criação de id = mode_icon-->
+            </div>
+
+            <div id="social_media"> <!--criando links para imagens-->
+                <a href="#">
+                    <img src="assets/imgs/facebook.png" alt="Facebook Logo">
+                </a>
+                <a href="#">
+                    <img src="assets/imgs/google.png" alt="Google Logo">
+                </a>
+                <a href="#">
+                    <img src="assets/imgs/github.png" alt="Github Logo">
+                </a>
+            </div>
+            <div id="inputs"> <!--adicionando entradas-->
+                <div class="input-box"> <!--classes de input-box-->
+                    <label for="name"> <!--usado label para acionar o input e quando clicar no icone tb aciona-->
+                        Name
+                        <div class="input-field"><!--icone user-->
+                            <i class="fa-solid fa-user"></i>
+                            <input type="text" id="name" name="name"> 
+                        </div>
+                    </label>
+                </div>
+                <div class="input-box"> <!--classes de input-box-->
+                    <label for="email"> <!--usado label para acionar o input e quando clicar no icone tb aciona-->
+                        E-mail
+                        <div class="input-field"><!--icone user-->
+                            <i class="fa-solid fa-envelope"></i>
+                            <input type="email" id="email" name="email"> 
+                        </div>
+                    </label>
+                </div>
+                <div class="input-box"> <!--classes de input-box-->
+                    <label for="password"> <!--usado label para acionar o input e quando clicar no icone tb aciona-->
+                        Password
+                        <div class="input-field"><!--icone envelope-->
+                            <i class="fa-solid fa-key"></i>
+                            <input type="password" id="password" name="name"> 
+                        </div>
+                    </label>
+
+                    <div id="forgot_password">
+                        <a href="#">
+                            Forgot your password?
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" id="login_button">
+                Login
+            </button>
+        </form>
+    </main>
+
+<div class="banners banner-widget-home">
+    <div class="container">
+        <div class="banner-full">
+            {% if not utils.is_mobile and banner.extra4 %}
+                <div class="mini-banner3">
+                    {{ banner.extra4 }}
+                </div>
+            {% elseif utils.is_mobile and banner.extra11 %}
+                
+                    <div class="mini-banner3">
+                        {{ banner.extra11 }}
+                    </div>
+                
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% if settings.showcase_3 == "featured" %}
+    {% set showcaseText = "Destaques" %}
+{% elseif settings.showcase_3 == "new" %}
+    {% set showcaseText = "Lan&ccedil;amentos" %}
+{% elseif settings.showcase_3 == "free_shipping" %}
+    {% set showcaseText = "Frete Gr&aacute;tis" %}
+{% elseif settings.showcase_3 == "promotion" %}
+    {% set showcaseText = "Promo&ccedil;&otilde;es" %}
+{% elseif settings.showcase_3 == "top_seller" %}
+    {% set showcaseText = "Mais Vendidos" %}
+{% endif %}
+
+{% if showAvailable %}
+    {% if settings.showcase_3 == "top_seller" %}
+        <div id="prognoos_popv1"></div>	
+        
+        {% set products = Products({
+            'filter': showAvailable,
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %}
+        
+    {% else %}
+        {% set products = Products({
+            'filter': [showAvailable, settings.showcase_3],
+            'limit': limitProducts,
+            'order': 'rand'
+        }) %}
+    {% endif %}
+    
+{% else %}
+    {% if settings.showcase_3 == "top_seller" %}
+        <div id="prognoos_popv1"></div>
+        
+        {% set products = Products({
+            'filter': 'available',
+            'limit': limitProducts,
+            'order': {'quantity_sold': 'desc'}
+        }) %} 
+    {% else %}
+        {% set products = Products({
+            'filter': settings.showcase_3,
+            'limit': limitProducts,
+            'order': 'rand'
+        }) %}
+    {% endif %}        
+{% endif %}
+
+{% element 'showcase' { 
+    "products": products,
+    "showcaseTitle": showcaseText
+} %}
+
+{% if banner.bottom %}
+    <div class="banner banner-bottom">
+        {{ banner.bottom }}
+    </div>
+{% endif %}
+
+{% if pages.current == 'home' %}
+    {{ banner.popup ~ banner.floating }}
+{% endif %}
+<h1>teste</h1>

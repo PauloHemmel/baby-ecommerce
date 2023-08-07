@@ -1,0 +1,187 @@
+{% if banner.title %}
+    <div class="banner banner-title">
+        {{ banner.title }}
+    </div>
+{% endif %}
+
+{% for discount in ProgressiveDiscounts %}
+{% if discount.banner %}
+   <img src="{{ discount.banner }}" alt="{{discount.name}}"/>  
+{% endif %}
+{% endfor %}
+
+<section id="product-container" class="produto-wrapper product-detail" itemscope itemtype="http://schema.org/Product">
+    {% element 'schema/product' {'product': product} %}
+    <div class="row">
+        
+        <div class="col-md-6">
+            {% element 'snippets/breadcrumb' { "class": 'breadcrumb'} %}
+            
+            {% if product.images %}
+                <div id="visualBlock" class="product-gallery">
+                    {{ productHelper.gallery() }}
+                </div>
+            {% else %}
+                <div class="product-gallery no-image">
+                    <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada">
+                </div>
+            {% endif %}
+            
+			{% if settings.social_position == 0 %}
+				<div class="product-social sidepicture">
+					{{ productHelper.social() }}
+				</div>
+			{% endif %}             
+            
+        </div>
+        
+        <div class="col-md-6">
+            
+            {% if productHelper.banner() %}
+                {{ productHelper.banner() }}
+            {% endif %}
+            
+            <h1 class="product-name" itemprop="name">{{ product.name }}</h1>
+            {% element 'product/rating' %}
+            <div class="product-labels">
+                {{ productHelper.labels() }}
+            </div>
+            {% for discount in ProgressiveDiscounts %}
+            {% if discount.tag %}
+                <div class="product-discount-recursive-tag">{{discount.tag}}</div>
+                <div class="product-discount-recursive-desc">{{discount.description}}</div>
+            {% endif %}
+            {% endfor %}
+            <p class="product-details">
+                {% if settings.show_product_stock %}
+                    <span>Estoque: <b>{{ product.stock }}</b></span>
+                {% endif %}                
+                {{ productHelper.details() }}
+                {{ productHelper.icons() }}
+            </p>
+            {{ productHelper.bonus() }}
+            <form id="form_comprar" method="post" data-app="product.buy-form" action="{{ links.cart_add ~ product.id }}">
+                {% if settings.cache_infopreco %}
+
+                <div data-module="pricing" data-snippet="snippets/pricing" data-product-id="{{ product.id }}">
+                   <div class="pricing">
+                    Carregando...
+                   </div>
+                </div>         
+                {% else %}
+                    {{ productHelper.pricing() }}
+                {% endif %}
+                {{ productHelper.variants() }}
+                {{ product.additional_information }}
+                {{ productHelper.gifts() }}
+                {{ productHelper.kit() }}
+                {% if not product.upon_request %}
+                    {% element 'snippets/botoes_qty' %}
+                    {{ productHelper.wishlist() }}
+                    {{ productHelper.shipping() }}
+                {% endif %}
+                
+                <div class="shipping-result"></div>
+    
+            </form>
+            
+            {% if product.additional_message %}
+                <div class="mensagem_adicional">{{ product.additional_message }}</div>    
+            {% endif %}
+            
+			{% if settings.social_position == 1 %}
+				<div class="product-social">
+					{{ productHelper.social() }}
+				</div>
+			{% endif %} 
+        </div>
+    </div>
+</section>
+
+<section id="ProdBlock" class="product-tabs">
+    <a name="formaPagto"></a>
+    <div id="ProdAbas" class="abasProduto tab-panel">
+        <ul class="clearfix">
+            {% for key, tab in productTabs %}
+              {% if tab.container_id %}
+              <li id="{{ tab.id }}" {% if key=='description' %}class="aberta" {% endif %}>
+                <a href="#" data-tab-container-id="{{ tab.container_id }}" data-tab-url="{{ tab.url }}">{{ tab.description }}</a>
+              </li>
+              {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="descricao" class="prodBox">
+        <div class="board">
+            <div class="board_htm description">
+                {{ product.description ? product.description : product.description_small }}
+            </div>
+        </div>
+    </div>
+
+    <div id="itensInclusos" class="prodBox">
+        <div class="board">
+            {{ product.included_items }}
+        </div>
+    </div>
+
+    <div id="coments" class="prodBox">
+        <div class="board">
+            {% element 'product/comments' %}
+        </div>
+    </div>
+
+    <div id="caracteristicas" class="prodBox">
+        <div class='board'>
+            {% element 'product/properties' %}
+        </div>
+    </div>
+
+    {{ productTabs.custom.content }}
+    {{ productTabs.downloads.content }}
+
+    <div id="garantia" class="prodBox">
+        <img class="loader" src="{{ tray.paths.system_image }}/big-loading.svg" style="display:none;" />
+    </div>
+    <div data-app="product.payment-methods" id="formasPagto" class="prodBox" style="display:none;" ></div>
+</section>
+
+{% if productHelper.bundle() %}
+<section class="product-cross-sell">
+    <h4>Aproveite tamb&eacute;m e</h4>
+    <h3>Compre Junto</h3>
+    {{ productHelper.bundle() }}
+</section>
+{% endif %}
+
+
+{% if product.related_products %}
+<div id="prognoos_lsi"></div>
+<section class="products-related">
+    <h4>Quem viu, viu tamb&eacute;m!</h4>
+    <h3 class="related-title">Produtos Relacionados</h3>
+    <div class="row">
+        {% for related in product.related_products %}
+            <div class="col-sm-3 product col-xs-12">
+                {% element 'snippets/product' {"product": related} %}
+            </div>
+        {% endfor %}
+    </div>
+</section>
+{% endif %}
+
+{% if settings.history_position == 1 %}
+    <div id="prognoos_ib"></div>
+    <section class="products-visited">
+        <h4>{{ Translation('confira_tambem') }}</h4>
+        <h3 class="related-title">{{ Translation('produtos_visitados') }}</h3>      
+        {% element 'snippets/history' %} 
+    </section>    
+{% endif %} 
+
+{% if banner.bottom %}
+    <div class="banner banner-bottom">
+        {{ banner.bottom }}
+    </div>
+{% endif %}

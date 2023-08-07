@@ -1,0 +1,603 @@
+[  
+  {
+   "label": "Configurações Gerais",
+   "icon": "cog",
+   "sessions": [
+      {
+        "label": "Redes Sociais",
+        "fields": [
+          {
+            "label": "Facebook",
+            "type": "text",
+            "description": "Insira o link completo",
+            "placeholder": "https://www.facebook.com/traytecnologia",
+            "icon": "facebook",
+            "field": "social_facebook",
+            "validation": "required:false"
+          },  
+          {
+            "label": "Twitter",
+            "type": "text",
+            "description": "Insira o link completo",
+            "placeholder": "https://twitter.com/tray",
+            "icon": "twitter",
+            "field": "social_twitter",
+            "validation": "required:false"
+          },
+          { 
+            "label": "Instagram",
+            "type": "text",
+            "description": "Insira o link completo",
+            "placeholder": "https://www.instagram.com/tray",
+            "icon": "instagram",
+            "field": "social_instagram",
+            "validation": "required:false"
+          },
+          {
+            "label": "Youtube", 
+            "type": "text",
+            "description": "Insira o link completo",
+            "placeholder": "https://www.youtube.com/user/TraySistemas",
+            "icon": "youtube",
+            "field": "social_youtube",
+            "validation": "required:false"
+          },
+          {
+            "label": "Pinterest",
+            "type": "text",
+            "description": "Insira o link completo",
+            "placeholder": "https://www.pinterest.com/tray",
+            "icon": "pinterest",
+            "field": "social_pinterest",
+            "validation": "required:false"
+          },      
+          {
+            "label": "Telefone",
+            "type": "text",
+            "description": "",
+            "placeholder": "(99) 99999-9999",
+            "icon": "whatsapp",
+            "field": "whatsapp",
+            "validation": "required:false"
+          }         
+        ] 
+      },
+      {
+        "label": "Recursos",
+        "fields": [
+          {
+            "label": "Avaliações",
+            "type": "toggle",
+            "description": "Ativa a exibição das Avaliações na Home da Loja",
+            "field": "store_rating"
+          },
+          {
+            "label": "Importante!",
+            "type": "alert",
+            "description": "Para mais opções vá até as configurações do recurso em Painel / Marketing / Avaliações da loja",
+            "field": "alert_avaliacoes"
+          },
+          {
+            "label": "Filtro Inteligente",
+            "type": "toggle",
+            "description": "Ativa a exibição do filtro inteligente",
+            "field": "enable_filter"
+          },
+          {
+            "label": "Cache no info preço",
+            "type": "toggle",
+            "description": "Será exibido 'carregando...' no preço do produto.",
+            "field": "cache_infopreco" 
+          }
+        ]
+      }
+    ]
+  },  
+  {
+    "label": "Cores e Layout",
+    "icon": "swatchbook",
+    "sessions": [
+      {
+        "label": "Geral",
+        "fields": [
+          {
+            "label": "Cor principal",
+            "type": "color",
+            "field": "color_bg_primaria",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor Secundária",
+            "type": "color",
+            "field": "color_bg_secundaria",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor do botão Comprar",
+            "type": "color",
+            "field": "color_cta",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor de Fundo da Loja",
+            "type": "color",
+            "field": "color_bg_store",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor de Texto das Avaliações",
+            "type": "color",
+            "field": "color_texto_avaliacao",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor de Texto das Palavras Mais Buscadas",
+            "type": "color",
+            "field": "color_texto_tags",
+            "validation": "required:true"
+          },
+          {
+            "label": "Fundo do banner régua",
+            "type": "color",
+            "field": "color_bg_extra1",
+            "validation": "required:true"
+          }
+        ]
+      },
+      {
+        "label": "Barra do topo",
+        "fields": [         
+          {
+            "label": "Cor do fundo",
+            "type": "color",
+            "field": "color_topbar_bg",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor do Texto",
+            "type": "color",
+            "field": "color_topbar_font",
+            "validation": "required:true"
+          },          
+          {
+            "label": "Cor dos textos ao passar o mouse",
+            "type": "color",
+            "field": "color_topbar_font_hover",
+            "validation": "required:true"
+          }
+        ]
+      },
+      {
+        "label": "Menu",
+        "fields": [         
+          {
+            "label": "Cor de fundo",
+            "type": "color",
+            "field": "color_menu_bg",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor do Texto",
+            "type": "color",
+            "field": "color_menu_font",
+            "validation": "required:true"
+          }
+        ]
+      },
+      {
+        "label": "Vitrine",
+        "fields": [         
+          {
+            "label": "Cor do título",
+            "type": "color",
+            "field": "color_showcase_color",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor do preço principal",
+            "type": "color",
+            "field": "color_product_price",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor do nome do produto",
+            "type": "color",
+            "field": "color_product_name",
+            "validation": "required:true"
+          }
+        ]
+      },
+      {
+        "label": "Newsletter",
+        "fields": [         
+          {
+            "label": "Cor do título",
+            "type": "color",
+            "field": "color_news_texto1",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor de fundo do botão",
+            "type": "color",
+            "field": "color_news_bgbotao",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor de texto do botão",
+            "type": "color",
+            "field": "color_news_textobotao",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor de Fundo",
+            "type": "color",
+            "field": "bg_news_color",
+            "validation": "required:true" 
+          }
+        ]
+      },
+      {
+        "label": "Rodapé",
+        "fields": [         
+          {
+            "label": "Cor dos Ícones de Redes Sociais",
+            "type": "color",
+            "field": "color_foo_social",
+            "validation": "required:true"
+          },
+          {
+            "label": "Links e Títulos",
+            "type": "color",
+            "field": "color_texto_msgrodape",
+            "validation": "required:true"
+          }
+        ]
+      }   
+    ]
+  },   
+  {
+    "label": "Banners",
+    "icon": "image",
+    "sessions": [
+      {
+        "label": "Configurações",
+        "fields": [
+          {
+            "label": "Banners Responsivo",
+            "type": "toggle",
+            "description": "Habilita Banners Responsivo",
+            "field": "home_slick"
+          },
+          {
+            "label": "Observação!",
+            "type": "alert",
+            "description": "Este banner substitui o plugin padrão da plataforma, não seguindo as configurações de efeito, tempo e etc definidas no cadastro de banner.",
+            "field": "alert_banner"
+          },
+          {
+            "label": "Setas",
+            "type": "toggle",
+            "description": "Exibe as setas de navegação nas laterais do banner. Por motivos de usabilidade as setas não são exibidas na versão mobile, apenas os Dots.",
+            "field": "banner_arrows"
+          },
+          {
+            "label": "Dots",
+            "type": "toggle",
+            "description": "Exibe indicadores de navegação centralizados na parte de baixo do banner",
+            "field": "banner_dots"
+          },
+          {
+            "label": "Efeito Fade",
+            "type": "toggle",
+            "description": "A troca das fases é feita por opacidade, o primeiro vai sumindo até aparecer o segundo e assim por diante.",
+            "field": "banner_effect_fade"
+          },
+          {
+            "label": "Infinito",
+            "type": "toggle",
+            "description": "Ao chegar na última fase o carrossel se repete.",
+            "field": "banner_infinite"
+          },
+          {
+            "label": "Altura Adaptável",
+            "type": "toggle",
+            "description": "Caso você possua imagens de tamanhos diferentes entre as fases o banner irá ajustar sua altura, isto afeta o conteúdo abaixo do banner, podendo aumentar ou diminuir dependendo da imagem.",
+            "field": "banner_adaptive_height"
+          },
+          {
+            "label": "Autoplay",
+            "type": "toggle",
+            "description": "A troca das fases será automática, não sendo necessário utilizar as Setas ou os Dots.",
+            "field": "banner_autoplay"
+          },
+          {
+            "label": "Intervalo entre as fases",
+            "type": "select",
+            "description": "Funciona apenas quando o Autoplay estiver ativo, define o tempo de exibição entre uma fase e outra.",
+            "field": "banner_interval",
+            "options": [
+              {
+                "value": "3000",
+                "content": "3 segundos"
+              },
+              {
+                "value": "4000",
+                "content": "4 segundos"
+              },
+              {
+                "value": "5000",
+                "content": "5 segundos"
+              },
+              {
+                "value": "6000",
+                "content": "6 segundos"
+              },
+              {
+                "value": "7000",
+                "content": "7 segundos"
+              },
+              {
+                "value": "8000",
+                "content": "8 segundos"
+              },
+              {
+                "value": "9000",
+                "content": "9 segundos"
+              },
+              {
+                "value": "10000",
+                "content": "10 segundos"
+              }
+            ]
+          },
+          {
+            "label": "Lazy Load",
+            "type": "select",
+            "description": "Também conhecido como carregamento sob demanda, possui duas opções: On-Demand: carrega a primeira imagem e as outras apenas quando forem entrar na tela. Progressive: carrega a primeira imagem e as outras quando o site termina de carregar.",
+            "field": "banner_lazyload",
+            "options": [
+              {
+                "value": "ondemand",
+                "content": "On-Demand"
+              },
+              {
+                "value": "progressive",
+                "content": "Progressive"
+              }
+            ]
+          }
+        ]
+      },
+      {
+       "label": "Cores",
+       "fields": [
+          {
+            "label": "Cor das setas",
+            "type": "color",
+            "field": "color_slick_arrow",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor das setas ao passar o mouse",
+            "type": "color",
+            "field": "color_slick_arrow_hover",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor dos Dots",
+            "type": "color",
+            "field": "color_slick_dot",
+            "validation": "required:true"
+          },
+          {
+            "label": "Cor dos Ativos",
+            "type": "color",
+            "field": "color_slick_dot_active",
+            "validation": "required:true"
+          }
+        ]
+      }
+    ]
+  }, 
+  {
+    "label": "Vitrines",
+    "icon": "columns",
+    "sessions": [
+      {
+        "label": "Geral",
+        "fields": [
+          {
+            "label": "Exibir apenas produtos disponiveis",
+            "type": "toggle",
+            "description": "Remove da listagem os produtos indisponiveis na home",
+            "field": "show_available_products"
+          },
+          {
+            "label": "Observação",
+            "type": "alert",
+            "description": "Produtos sem estoque podem não ser removidos através dessa configuração, é aplicado o filtro de acordo com as configurações do painel administrativo da loja.",
+            "field": "alert_produtos"
+          },
+          {
+            "label": "Direcionar direto para o carrinho",
+            "type": "toggle",
+            "description": "Esta opção não verifica produtos que possuem variações.",
+            "field": "buy_to_cart"
+          },
+          {
+            "label": "Exibir tag de desconto",
+            "type": "toggle",
+            "description": "",
+            "field": "discount"
+          },
+          {
+            "type": "tab",
+            "field": "vitrine",
+            "options": [
+              {
+                "value": "vitrine_1",
+                "content": "Vitrine 1"
+              },
+              {
+                "value": "vitrine_2",
+                "content": "Vitrine 2"
+              },
+              {
+                "value": "vitrine_3",
+                "content": "Vitrine 3"
+              }
+            ]
+          },
+          {
+            "label": "Vitrine 1",
+            "type": "radio",
+            "tab": "vitrine_1",
+            "description": "O que exibir na primeira vitrine?",
+            "field": "showcase_1",
+            "options": [
+              {
+                "value": "featured",
+                "content": "Destaques"
+              },
+              {
+                "value": "new",
+                "content": "Lançamentos"
+              },
+              {
+                "value": "free_shipping",
+                "content": "Frete Grátis"
+              },
+              {
+                "value": "promotion",
+                "content": "Promoções"
+              },
+              {
+                "value": "top_seller",
+                "content": "Mais Vendidos"
+              }
+            ]
+          },
+          {
+            "label": "Vitrine 2",
+            "type": "radio",
+            "tab": "vitrine_2",
+            "description": "O que exibir na segunda vitrine?",
+            "field": "showcase_2",
+            "options": [
+              {
+                "value": "featured",
+                "content": "Destaques"
+              },
+              {
+                "value": "new",
+                "content": "Lançamentos"
+              },
+              {
+                "value": "free_shipping",
+                "content": "Frete Grátis"
+              },
+              {
+                "value": "promotion",
+                "content": "Promoções"
+              },
+              {
+                "value": "top_seller",
+                "content": "Mais Vendidos"
+              }
+            ]
+          },
+          {
+            "label": "Vitrine 3",
+            "type": "radio",
+            "tab": "vitrine_3",
+            "description": "O que exibir na terceira vitrine?",
+            "field": "showcase_3",
+            "options": [
+              {
+                "value": "featured",
+                "content": "Destaques"
+              },
+              {
+                "value": "new",
+                "content": "Lançamentos"
+              },
+              {
+                "value": "free_shipping",
+                "content": "Frete Grátis"
+              },
+              {
+                "value": "promotion",
+                "content": "Promoções"
+              },
+              {
+                "value": "top_seller",
+                "content": "Mais Vendidos"
+              }
+            ]
+          },
+          {
+            "label": "Quantidade de produtos na vitrine",
+            "type": "text",
+            "description": "",
+            "field": "limitProducts",
+            "validation": "required:true"
+          },
+          {
+            "label": "Escolha a forma que será exibido preços anteriores à promoção",
+            "type": "radio",
+            "description": "",
+            "field": "price_before_style",
+            "options": [
+              {
+                "value": "strike",
+                "style": true,
+                "content": "R$ 0,00"
+              },
+              {
+                "value": "depor",
+                "content": "De: R$ 0,00"
+              },
+              {
+                "value": "strike-depor",
+                "style": true,
+                "content": "De: R$ 0,00"
+              }
+            ]
+          }
+        ]
+      } 
+    ]  
+  },
+  {
+    "label": "Selo Adicional",
+    "icon": "star",
+    "sessions": [
+      {
+        "label": "Selo",
+        "fields": [
+          {
+            "label": "Exibir o selo adicional",
+            "type": "toggle",
+            "field": "enable_seal"
+          },
+          {
+            "label": "Adicione abaixo o código do selo adicional",
+            "type": "textarea",
+            "description": "O selo adicional será exibido no rodapé da loja, ao lado de PAGAMENTO.",
+            "placeholder": "",
+            "icon": "",
+            "field": "seal_code",
+            "validation": "required:false"
+          }
+        ]
+      }
+    ]
+  },   
+  {
+    "info": {
+      "version": "7.1.2",
+      "documentation": "https://manuais.tray.com.br/v/baby-novo-painel",      
+      "support": "https://atendimento.tray.com.br/hc/pt-br/requests/new"
+    }
+  }    
+]

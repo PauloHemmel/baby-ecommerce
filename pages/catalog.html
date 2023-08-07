@@ -1,0 +1,68 @@
+<div class="catalog-header">
+    
+    {% if banner.title %}
+        <div class="banner banner-title">
+            {{ banner.title }}
+        </div>
+    {% endif %}
+    
+    <h1 class="catalog-name">{{ category.name }}</h1>
+
+    {% if products|length > 0 %}
+    
+        {% if breadcrumb %}
+            {% element 'snippets/breadcrumb' %}
+        {% endif %}
+        
+        <div class="system-filter">
+            {% element 'snippets/filter' {
+                'brands': category.brands
+            } %}
+        </div>
+    
+        <div class="pagination">
+            {% element 'snippets/pagination' %}
+        </div>
+        
+    {% endif %} 
+    
+    {% if category.small_description %}
+    <div class="category-description">
+        {{ category.small_description }}
+    </div>
+    {% endif %}    
+    
+</div>
+
+
+{% if products|length > 0 %}
+
+    <div class="catalog-content row">
+        {% if settings.enable_filter %}
+            <div class="col-md-3">
+                {% element 'sidebar-left' %}
+            </div>
+        {% endif %}            
+        {% element 'showcase-catalog' {
+            "products": products
+        } %}
+    </div>
+
+    <div class="catalog-footer">
+        {% element 'snippets/pagination' %}
+    </div>
+
+{% else %}
+
+    <div class="catalog-empty">
+        <img src="{{ asset('img/catalog-empty.svg') }}" alt="Sem produtos" width="150" height="150">
+        <p>Nenhum produto encontrado nessa categoria.</p>
+    </div>
+
+{% endif %}
+
+{% if banner.bottom %}
+    <div class="banner banner-bottom">
+        {{ banner.bottom }}
+    </div>
+{% endif %}

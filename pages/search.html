@@ -1,0 +1,66 @@
+{% if banner.title %}
+    <div class="banner banner-title">
+        {{ banner.title }}
+    </div>
+{% endif %}
+
+<div class="catalog-header">
+    
+    {% if search.word %}
+        <h2 class="catalog-name">Exibindo resultados para: {{ search.word }}</h2>
+    {% else %}
+        <h2 class="catalog-name">Exibindo todos os produtos</h2>
+    {% endif %}
+    
+    <h2 class="catalog-name">{{ category.name }}</h2>
+    
+    {% if products|length > 0 %}
+    
+        {% if breadcrumb %}
+            {% element 'snippets/breadcrumb' %}
+        {% endif %}
+        
+        <div class="system-filter">
+            {% element 'snippets/filter' {
+                'brands': category.brands
+            } %}
+        </div>
+    
+        <div class="pagination">
+            {% element 'snippets/pagination' %}
+        </div>
+        
+    {% endif %}
+    
+</div>
+
+
+{% if products|length > 0 %}
+
+    <div class="catalog-content row">
+            {% if settings.enable_filter %}
+                <div class="col-md-3">
+                    {% element 'sidebar-left' %}
+                </div>
+            {% endif %}
+        {% element 'showcase-catalog' {
+            "products": products
+        } %}
+    </div>
+
+
+    <div class="catalog-footer">
+        {% element 'snippets/pagination' %}
+    </div>
+
+{% else %}
+
+    <p>Nenhum produto encontrado nessa categoria.</p>
+
+{% endif %}
+
+{% if banner.bottom %}
+    <div class="banner banner-bottom">
+        {{ banner.bottom }}
+    </div>
+{% endif %}

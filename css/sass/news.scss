@@ -1,0 +1,179 @@
+.news-full{
+    background-image: url('../img/pattern-customer.png');
+    position: relative;
+    
+    &:after {
+        content: '';
+        border-top: 1px dashed #6fbec5;
+        position: absolute;
+        width: 100%;
+        bottom: 8px;
+    }
+    &:before {
+        content: '';
+        border-top: 1px dashed #6fbec5;
+        position: absolute;
+        width: 100%;
+        top: 8px;
+    }    
+}
+
+.newsletter{
+    padding: 30px 15px;
+    text-align: center;
+    
+    > *{
+        display: inline-block;
+        vertical-align: middle;
+    }
+    
+    h2{
+        color: #000;
+        text-transform: uppercase;
+        @include typo(2.2rem, 700, $font, 2.4rem);
+        
+        span{
+            color: #fff;
+            font-weight: 400;
+        }
+        
+        @media screen and (max-width: $md){
+            @include typo(1.4rem, 400, $font, 1.4rem);    
+        }
+        
+        @media screen and (max-width: $sm){
+            @include typo(1.3rem, 400, $font, 1.3rem);    
+        }
+    }
+    
+    .newsletter-title{
+        
+        @media screen and (max-width: $sm){
+            display: block;
+            margin-bottom: 15px;
+        }
+    }
+    
+    .newsletter-subtitle{
+        font-family: $font2;
+        font-size: 2.3rem;
+        text-transform: initial;
+        font-weight: 400;
+        
+        @media screen and (max-width: $md){
+            font-size: 1.3rem;
+        }
+    }
+    
+    i{
+        border: 1px solid #c2a26f;
+        border-radius: 55px;
+        height: 55px;
+        margin: 0 30px;
+        padding: 18px 0;
+        text-align: center;
+        width: 55px;
+        
+        @media screen and (max-width: $md){
+            border-radius: 42px;
+            height: 42px;
+            margin: 0 15px;
+            padding: 12px 0;
+            width: 42px;    
+        }
+        
+        @media screen and (max-width: $sm){
+            border-radius: 32px;
+            height: 32px;
+            margin: 0 10px 0 0;
+            padding: 7px 0;
+            width: 32px;
+            
+            & + h2{
+                display: none;
+            }
+        }
+    }
+    
+    form{
+        margin-left: 10px;
+        width: 35%;
+        
+        @media screen and (max-width: $sm){
+            margin: 0;
+            width: 80%;
+        }
+        
+        div{
+            overflow: hidden;
+            
+            input{
+                background: #f6f7f8;
+                border: none;
+                color: #aaa;
+                padding: 10px;
+                width: 100%;
+                @include typo(1.3rem, 400, $font, 1.3rem);
+                
+                @media screen and (max-width: $md){
+                    padding: 7px;
+                    @include typo(1.1rem, 400, $font, 1.3rem);    
+                }
+                
+                @media screen and (max-width: $sm){
+                    padding: 7px;
+                    @include typo(1.1rem, 400, $font, 1.3rem);    
+                }
+            }
+        }
+        
+        button{
+            background: #c2a26f;
+            border: none;
+            color: #fff;
+            margin-left: 10px;
+            padding: 0 24px;
+            text-align: center;
+            text-transform: uppercase;
+            @include typo(1.5rem, 400, $font, 3.5rem);
+            
+            @media screen and (max-width: $md){
+                padding: 0 6px;
+                @include typo(1.1rem, 400, $font, 2.7rem);
+            }
+            
+            @media screen and (max-width: $sm){
+                padding: 0 6px;
+                @include typo(1.1rem, 400, $font, 2.7rem);
+            }
+        }
+    }
+}
+
+// Notícias
+.page-content {
+    
+    .noticias {
+        li{
+            float: none;
+            padding: 0;
+            margin: 10px 0;
+            border: 1px dotted #ccc;
+            height: 95px;
+            
+            #noticia_imagem {
+                float: left;
+                width: 95px;
+                height: 95px;
+                text-align: center;
+                margin: 0 5px;
+                padding: 0;
+            }
+            
+            #noticia_dados {
+                overflow: hidden;
+                padding: 15px;
+            }
+        }
+    }
+}

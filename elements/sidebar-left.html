@@ -1,0 +1,7 @@
+<aside class="sidebar">
+    {% if filters %}
+        {% element 'smart-filter' %}
+    {% elseif filtered_options %}
+        {% element 'new-smart-filter' %}
+    {% endif %}
+</aside>

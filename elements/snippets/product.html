@@ -1,0 +1,70 @@
+<div itemscope itemtype="http://schema.org/Product">
+    {% if not product.is_kit %}
+        <a href="{{ settings.buy_to_cart ? links.cart_add ~ product.id : product.link }}">
+    {% else %}
+        <a href="{{ product.link }}">
+    {% endif %}
+        <div class="product-image">
+            {% if product.images %}
+                {% if pages.current != 'home' %}
+                    <img class="lazy" src="{{ product.images[0].large }}" alt="{{ product.name }}" title="{{ product.name }}">
+                {% else %}
+                    <img class="lazy" data-lazy="{{ product.images[0].large }}" src="" alt="{{ product.name }}" title="{{ product.name }}">
+                {% endif %}
+            {% else %}
+                <img src="{{ asset('img/no-image.svg') }}" alt="Nenhuma imagem foi cadastrada" width="100" title="{{ product.name }}">
+            {% endif %}
+            
+            {% if settings.discount %}
+                {% set porcentagemDesconto = 100 - ( product.price_offer / product.price ) * 100 %}
+                {% if porcentagemDesconto < 100 %}
+                  <span class="discount"> {{ porcentagemDesconto|number_format }}% de desconto </span>
+                {% endif %}  
+            {% endif %}             
+        </div>
+    
+        <div class="product-name" itemprop="name">{{ product.name }}</div>
+        {% for discount in product.ProgressiveDiscounts %}
+        {% if discount.tag %}
+            <div class="product-discount-recursive-tag">{{discount.tag}}</div>
+            <div class="product-discount-recursive-desc">{{discount.description}}</div>
+        {% endif %}
+    {% endfor %} 
+        {% if settings.cache_infopreco %}
+        <div data-module="pricing" data-snippet="snippets/product-payment" data-product-id="{{ product.id }}">
+            <div class="pricing">
+                Carregando...
+            </div>
+        </div>
+        {% else %}
+            {% element 'snippets/product-payment' {"product": product} %}
+        {% endif %}
+    </a>
+    
+    {% if pages.current == 'catalog' %}
+        {% if settings.compare %}
+        <div class="compare-buttons">
+            {% set compareCSS = 'compare-hidden' %}
+    
+            <a data-compare="remove" href="{{ links.compare_delete ~ product.id }}" class="{{ not product.compare ? compareCSS }}">
+                <span class="filter-checkbox checked"></span>
+                {{ Translation("remover_comparar") }}
+            </a>
+            
+            <a data-compare="add" href="{{ links.compare_add  ~ product.id }}" class="{{ product.compare ? compareCSS }}">
+                <span class="filter-checkbox"></span>
+                {{ Translation("comparar_produto") }}
+            </a>
+        </div>
+        {% endif %}
+    {% endif %}
+    
+    {% if not product.is_kit %}
+        <a href="{{ settings.buy_to_cart ? links.cart_add ~ product.id : product.link }}" class="product-seemore">
+    {% else %}
+        <a href="{{ product.link }}" class="product-seemore">
+    {% endif %}
+        <i><img src="{{ asset('img/cart.svg') }}" alt="Ver mais" width="17"></i>
+        Ver mais
+    </a>
+</div>

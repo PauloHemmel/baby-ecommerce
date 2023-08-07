@@ -1,9 +1,168 @@
+<link rel="stylesheet" href="{{ asset('css/slide.css') }}">
+
+<body>
+    <!--<header>
+        <div class="container">
+            <div class="logo"><img src="img/logo.png"></div>
+            <div class="menu">
+                <nav>
+                    <a href="#home">home</a>
+                    <a href="#sobre">sobre</a>
+                    <a href="#equipe">nossa equipe</a>
+                    <a href="#servicos">serviços</a>
+                    <a href="#contato">contato</a>
+                </nav>
+            </div>
+
+            <div class="social">
+                <button><i class="fa-brands fa-instagram"></i></button>
+                <button><i class="fa-brands fa-facebook-f"></i></button>
+                <button><i class="fa-brands fa-youtube"></i></button>
+            </div>
+        </div>
+    </header>
+-->
+    <section class="slidezsr">
+        <div class="slidezsr-content">
+            
+            <input type="radio" name="btn-radio" id="radio1">
+            <input type="radio" name="btn-radio" id="radio2">
+            <input type="radio" name="btn-radio" id="radio3">
+
+            <div class="slidezs-box primeiro">
+                <img class="img-desktop" src="{{ asset('img/pastaimg/bannerpokedesk.jpg') }}" alt="slidezs 1">
+                <img class="img-mobile" src="{{ asset('img/pastaimg/bangraomobi.png') }}" alt="slidezs 1">
+                <!--<img class="img-mobile" src="{{ asset('img/pastaimg/bannerpokemobi.jpg') }}" alt="slidezs 1">-->
+            </div>
+
+            <div class="slidezs-box">
+                <img class="img-desktop" src="{{ asset('img/pastaimg/spindesk.png') }}" alt="slidezs 3">
+                <img class="img-mobile" src="{{ asset('img/pastaimg/bannerspinmobi.jpg') }}" alt="slidezs 1">
+            </div>
+
+            <div class="slidezs-box">
+                <img class="img-desktop" src="{{ asset('img/pastaimg/bannerspapadesk.jpg') }}" alt="slidezs 3">
+                <img class="img-mobile" src="{{ asset('img/pastaimg/bannerspapamobi.jpg') }}" alt="slidezs 3">
+            </div>
+
+            <div class="nav-auto">
+                <div class="auto-btn1"></div>
+                <div class="auto-btn2"></div>
+                <div class="auto-btn3"></div>
+            </div>
+            <div class="nav-manual">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+            </div>
+        </div>
+    </section>
+ <!--
+    <section id="home">
+        <div class="container1">
+            <h2>Home</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum culpa et ad, itaque ipsum impedit ducimus vero fugit amet earum deserunt omnis possimus minima ipsam quia est quaerat illo quidem.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, repudiandae corporis possimus veritatis fugiat facilis nihil sapiente facere delectus ex vel voluptatibus cumque recusandae quaerat dignissimos. Illum, exercitationem recusandae? Cum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestias sapiente qui odio aspernatur vitae dolores ab optio accusamus sint pariatur, maxime facere ullam eveniet, reiciendis dolore quia rerum architecto.</p>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container1">
+            <h2>Sobre</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum culpa et ad, itaque ipsum impedit ducimus vero fugit amet earum deserunt omnis possimus minima ipsam quia est quaerat illo quidem.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, repudiandae corporis possimus veritatis fugiat facilis nihil sapiente facere delectus ex vel voluptatibus cumque recusandae quaerat dignissimos. Illum, exercitationem recusandae? Cum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestias sapiente qui odio aspernatur vitae dolores ab optio accusamus sint pariatur, maxime facere ullam eveniet, reiciendis dolore quia rerum architecto.</p>
+        </div>
+    </section>
+
+    <section id="equipe">
+        <div class="container1">
+            <h2>Nossa Equipe</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum culpa et ad, itaque ipsum impedit ducimus vero fugit amet earum deserunt omnis possimus minima ipsam quia est quaerat illo quidem.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, repudiandae corporis possimus veritatis fugiat facilis nihil sapiente facere delectus ex vel voluptatibus cumque recusandae quaerat dignissimos. Illum, exercitationem recusandae? Cum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestias sapiente qui odio aspernatur vitae dolores ab optio accusamus sint pariatur, maxime facere ullam eveniet, reiciendis dolore quia rerum architecto.</p>
+        </div>
+    </section>
+
+    <section id="servicos">
+        <div class="container1">
+            <h2>Serviços</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum culpa et ad, itaque ipsum impedit ducimus vero fugit amet earum deserunt omnis possimus minima ipsam quia est quaerat illo quidem.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, repudiandae corporis possimus veritatis fugiat facilis nihil sapiente facere delectus ex vel voluptatibus cumque recusandae quaerat dignissimos. Illum, exercitationem recusandae? Cum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestias sapiente qui odio aspernatur vitae dolores ab optio accusamus sint pariatur, maxime facere ullam eveniet, reiciendis dolore quia rerum architecto.</p>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container1">
+            <h2>Contato</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum culpa et ad, itaque ipsum impedit ducimus vero fugit amet earum deserunt omnis possimus minima ipsam quia est quaerat illo quidem.</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, repudiandae corporis possimus veritatis fugiat facilis nihil sapiente facere delectus ex vel voluptatibus cumque recusandae quaerat dignissimos. Illum, exercitationem recusandae? Cum. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus molestias sapiente qui odio aspernatur vitae dolores ab optio accusamus sint pariatur, maxime facere ullam eveniet, reiciendis dolore quia rerum architecto.</p>
+        </div>
+    </section>-->
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+</body>
+
 {% if settings.limitProducts %}
     {% set limitProducts = settings.limitProducts %}
 {% else %}
-    {% set limitProducts = 8 %}
+    {% set limitProducts = 2 %}
 {% endif %}
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="assets/css/staile.css">
+
+
+<body>
+    <div class="wrappper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <ul class="carouselu">
+        <li class="cardu">
+          <a href="https://www.katatau.com.br/banho-e-higiene/">
+          <div class="img"><img src="{{ asset('img/pastaimg/banhe.png') }}" alt="img" draggable="false">
+          </div></a>
+          <h2>Banheiras</h2>
+        </li>
+        <li class="cardu">
+          <a href="https://www.katatau.com.br/moveis/roupeiro-de-madeira/">
+          <div class="img"><img src="{{ asset('img/pastaimg/armario.png') }}" alt="img" draggable="false"></div></a>
+          <h2>Armários</h2>
+          <!--<span>Web Developer</span>-->
+        </li>
+        <li class="cardu">
+          <a href="https://www.katatau.com.br/moveis/berco-de-madeira/">
+          <div class="img"><img src="{{ asset('img/pastaimg/berco.png') }}" alt="img" draggable="false"></div></a>
+          <br/>
+          <h1>Berço</h1>
+        </li>
+        <li class="cardu">
+          <a href="https://www.katatau.com.br/passeio/teste/">
+          <div class="img"><img src="{{ asset('img/pastaimg/carrin.png') }}" alt="img" draggable="false"></div></a>
+          <h2>Carrinhos</h2>
+        </li>
+        <li class="cardu">
+          <a href="https://www.katatau.com.br/passeio/cadeira-para-auto/">
+          <div class="img"><img src="{{ asset('img/pastaimg/icones.png') }}" alt="img" draggable="false"></div></a>
+          <h2>Bebê Conforto</h2>
+        </li>
+        <li class="cardu">
+          <a href="https://www.katatau.com.br/alimentacao/">
+          <div class="img"><img src="{{ asset('img/pastaimg/cadealim.png') }}" alt="img" draggable="false"></div></a>
+          <h2>Alimentação</h2>
+        </li>
+      </ul>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+ </body>
+</html>
+            
 {% set showAvailable = settings.show_available_products ? 'available' %}
 
 {% if settings.showcase_1 == "featured" %}
@@ -18,6 +177,7 @@
     {% set showcaseText = "Mais Vendidos" %}
 {% endif %}
 
+    
 {% if showAvailable %}
     {% if settings.showcase_1 == "top_seller" %}
         <div id="prognoos_popv1"></div>	
@@ -35,6 +195,8 @@
             'order': 'rand'
         }) %}
     {% endif %}
+    
+
     
 {% else %}
     {% if settings.showcase_1 == "top_seller" %}
@@ -58,6 +220,18 @@
     "products": products,
     "showcaseTitle": showcaseText
 } %}
+
+<!--<body>
+        <div id="slider">
+            <img class="selected" src="https://images.unsplash.com/photo-1530432999454-016a47c78af3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Image1">
+            <img src="https://images.unsplash.com/photo-1562514947-bf9cf8e45d4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Image2">
+            <img src="https://images.unsplash.com/photo-1562526109-878e3d276ceb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt="Image3">
+            <img src="/loja/img/stars-new.png" alt="Image4">
+    </div>
+
+    <script src="script.js"></script>
+</body>-->
+
 <div class="banners banner-widget-home">
     <div class="container">
         <div class="row">
@@ -141,67 +315,6 @@
     "showcaseTitle": showcaseText
 } %}
 
-<body>
-    <main id="container">
-        <form id="login_form">
-            <div id="form_header">
-                <h1>Login</h1>
-                <i id="mode_icon" class="fa-sharp fa-solid fa-moon"></i> <!--adicionando função para o icone, criação de id = mode_icon-->
-            </div>
-
-            <div id="social_media"> <!--criando links para imagens-->
-                <a href="#">
-                    <img src="assets/imgs/facebook.png" alt="Facebook Logo">
-                </a>
-                <a href="#">
-                    <img src="assets/imgs/google.png" alt="Google Logo">
-                </a>
-                <a href="#">
-                    <img src="assets/imgs/github.png" alt="Github Logo">
-                </a>
-            </div>
-            <div id="inputs"> <!--adicionando entradas-->
-                <div class="input-box"> <!--classes de input-box-->
-                    <label for="name"> <!--usado label para acionar o input e quando clicar no icone tb aciona-->
-                        Name
-                        <div class="input-field"><!--icone user-->
-                            <i class="fa-solid fa-user"></i>
-                            <input type="text" id="name" name="name"> 
-                        </div>
-                    </label>
-                </div>
-                <div class="input-box"> <!--classes de input-box-->
-                    <label for="email"> <!--usado label para acionar o input e quando clicar no icone tb aciona-->
-                        E-mail
-                        <div class="input-field"><!--icone user-->
-                            <i class="fa-solid fa-envelope"></i>
-                            <input type="email" id="email" name="email"> 
-                        </div>
-                    </label>
-                </div>
-                <div class="input-box"> <!--classes de input-box-->
-                    <label for="password"> <!--usado label para acionar o input e quando clicar no icone tb aciona-->
-                        Password
-                        <div class="input-field"><!--icone envelope-->
-                            <i class="fa-solid fa-key"></i>
-                            <input type="password" id="password" name="name"> 
-                        </div>
-                    </label>
-
-                    <div id="forgot_password">
-                        <a href="#">
-                            Forgot your password?
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <button type="submit" id="login_button">
-                Login
-            </button>
-        </form>
-    </main>
-
 <div class="banners banner-widget-home">
     <div class="container">
         <div class="banner-full">
@@ -231,6 +344,7 @@
 {% elseif settings.showcase_3 == "top_seller" %}
     {% set showcaseText = "Mais Vendidos" %}
 {% endif %}
+
 
 {% if showAvailable %}
     {% if settings.showcase_3 == "top_seller" %}
@@ -282,4 +396,73 @@
 {% if pages.current == 'home' %}
     {{ banner.popup ~ banner.floating }}
 {% endif %}
-<h1>teste</h1>
+    <h1>Marcas Oficiais</h1>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="stylemarcas.css">
+
+    <script src="javamarcas.js" defer></script>
+<body>
+      <li class="teixto">
+          <h1>Bebê Conforto</h1>
+        </li>
+    <div class="wraper">
+      <i id="left" class="fa-solid fa-angle-left"></i>
+      <ul class="carosso">
+        <li class="cardume">
+          <a href="https://www.katatau.com.br/banho-e-higiene/">
+          <div class="imge"><img src="{{ asset('img/banheiras.png') }}" alt="img" draggable="false">
+          </div></a>
+          <h2>Banheiras</h2>
+        </li>
+        <li class="cardume">
+          <a href="https://www.katatau.com.br/moveis/roupeiro-de-madeira/">
+          <div class="imge"><img src="{{ asset('img/armario.png') }}" alt="img" draggable="false"></div></a>
+          <h2>Armários</h2>
+          <!--<span>Web Developer</span>-->
+        </li>
+        <li class="cardume">
+          <a href="https://www.katatau.com.br/moveis/berco-de-madeira/">
+          <div class="imge"><img src="{{ asset('img/carrinho2.png') }}" alt="img" draggable="false"></div></a>
+          <h2>Berço</h2>
+        </li>
+        <li class="cardume">
+          <a href="https://www.katatau.com.br/passeio/teste/">
+          <div class="imge"><img src="{{ asset('img/carrinhobebe.png') }}" alt="img" draggable="false"></div></a>
+          <h2>Carrinhos</h2>
+        </li>
+        <li class="cardume">
+          <a href="https://www.katatau.com.br/passeio/cadeira-para-auto/">
+          <div class="imge"><img src="{{ asset('img/bebeconforto.png') }}" alt="img" draggable="false"></div></a>
+          <h2>Bebê Conforto</h2>
+        </li>
+        <li class="cardume">
+          <a href="https://www.katatau.com.br/alimentacao/">
+          <div class="imge"><img src="{{ asset('img/alimentacao.png') }}" alt="img" draggable="false"></div></a>
+          <h2>Alimentação</h2>
+        </li>
+      </ul>
+      <i id="right" class="fa-solid fa-angle-right"></i>
+    </div>
+ </body>
+</html>
+
+<!--#include virtual="{{ asset('elements/snippets/hmtlmarcas.html') }}" -->
+
+<!-- GetButton.io widget -->
+<script type="text/javascript">
+    (function () {
+        var options = {
+            whatsapp: "67991238667", // WhatsApp number
+            call_to_action: "Precisa de Ajuda? ->", // Call to action
+            button_color: "#FF6550", // Color of button
+            position: "right", // Position may be 'right' or 'left'
+        };
+        var proto = 'https:', host = "getbutton.io", url = proto + '//static.' + host;
+        var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
+        s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
+        var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
+    })();
+</script>
+<!-- /GetButton.io widget -->
+

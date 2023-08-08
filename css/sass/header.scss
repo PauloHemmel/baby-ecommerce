@@ -28,7 +28,7 @@ header{
 }
 
 .site-logo {
-    height: 220px;
+    height: 112px;
     display: inline-block;
     font-size: 0;
     text-align: center;
@@ -36,7 +36,7 @@ header{
     &:before{
         content: '';
         display: inline-block;
-        height: 220px;
+        height: 138px;
         margin-right: -1%;
         vertical-align: middle;
         width: 1%;
@@ -44,7 +44,7 @@ header{
     
     img{
         display: inline-block;
-        max-height: 210px;
+        max-height: 77px;
         max-width: 99%;
         vertical-align: middle;
     }

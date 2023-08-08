@@ -1,0 +1,120 @@
+/**
+ * Showcase
+ */
+
+.showcase{
+    background: #fff;
+    padding: 45px 0;
+    
+    > h2{
+        margin-bottom: 30px;
+        padding: 30px 0 0;
+        text-align: center;
+        text-transform: none;
+        
+        @media screen and (max-width: $sm){
+            margin-bottom: 0;
+            padding: 30px 5px 0;
+        }
+        
+        small{
+            display: block;
+            margin-bottom: 10px;
+            @include typo(1.7rem, 400, $font2, 2rem);
+        }
+        
+        strong{
+            color: #000;
+            padding: 0 20px;
+            position: relative;
+            text-align: center;
+            text-transform: uppercase;
+            @include typo(3.6rem, 700, $font, 4rem);
+            
+            @media screen and (max-width: $sm){
+                @include typo(2.5rem, 700, $font, 3rem);
+            }
+            
+            &:before,
+            &:after{
+                background: #000;;
+                border-radius: 5px;
+                content: '';
+                height: 5px;
+                margin-top: -2px;
+                position: absolute;
+                top: 50%;
+                width: 5px;
+            }
+            
+            &:before{
+                left: 0;
+            }
+            
+            &:after{
+                right: 0;
+            }
+        }
+    }
+    
+    .showcase-list.slick-slider{
+        margin: 0 45px;
+        padding-top: 20px;
+        
+        @media screen and (max-width: $sm){
+            margin: 0;
+        }
+    }
+    
+    .carousel-next,
+    .carousel-prev{
+        border-radius: 45px;
+        cursor: pointer;
+        position: absolute;
+        top: 150px;
+        z-index: 10;
+    }
+    
+    .carousel-next{
+        right: -55px;
+        @include prefix('transform', 'rotate(180deg)');
+        
+        @media screen and (max-width: $sm){
+            right: 0;
+        }
+    }
+    
+    .carousel-prev{
+        left: -55px;
+        
+        @media screen and (max-width: $sm){
+            left: 0;
+        }
+    }
+    
+    .slick-dots{
+        display: block;
+        position: absolute;
+        text-align: center;
+        top: 0;
+        width: 100%;
+    
+        li{
+            background: #e7e7e7;
+            cursor: pointer;
+            display: inline-block;
+            float: none;
+            height: 2px;
+            margin: 0 6px;
+            width: 40px;
+            
+            &.slick-active{
+                background: #9adce2;
+            }
+        }
+        
+        button{
+            display: none;
+        }
+    }
+}

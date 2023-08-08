@@ -8,10 +8,10 @@
 
 .banner-home{
     position: relative;
-    z-index: 10;
+    z-index: 1000;
     
-    @media screen and (max-width: $sm){
-        padding: 0 15px;
+    @media screen and (max-width: 10%){
+        padding: 0 155px;
     }
     
     .slick-slide{
@@ -64,8 +64,8 @@
 }
 
 .banner-widget{
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 3000px;
+    padding-bottom: 3000px;
     
     @media screen and (max-width: $sm){
         .mini-banner{
@@ -85,7 +85,7 @@
 }
 
 .mobile-off{
-    @media screen and (max-width: $sm){
-        display: none;
+    @media screen and (max-width: 600px){
+        display: relative;
     }
 }

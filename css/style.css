@@ -1,0 +1,119 @@
+/* Import Google font - Poppins */
+/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pacifico", sans-serif;
+}
+/*body {
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to left top, #031A9A, #8B53FF);
+}*/
+.wrappper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+.wrappper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrappper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wrappper i:first-child{
+  left: -22px;
+}
+.wrappper i:last-child{
+  right: -22px;
+}
+.wrappper .carouselu{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 6) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carouselu::-webkit-scrollbar {
+  display: none;
+}
+.carouselu.no-transition {
+  scroll-behavior: auto;
+}
+.carouselu.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carouselu.dragging .cardu {
+  cursor: grab;
+  user-select: none;
+}
+.carouselu :where(.cardu, .img) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carouselu .cardu {
+  scroll-snap-align: start;
+  height: 242px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 1px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+.carouselu .cardu .img {
+  background: #42a5b3;
+  height: 149px;
+  width: 149px;
+  border-radius: 50%;
+}
+.cardu .img img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+.carouselu .cardu h2 {
+  font-weight: 500;
+  font-size: 1.56rem;
+  margin: 30px 0 5px;
+}
+.carouselu .cardu span {
+  color: #6A6D78;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wrappper .carouselu {
+    grid-auto-columns: calc((100% / 3) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrappper .carouselu {
+    grid-auto-columns: calc((100% / 2) - 6px);
+  }
+}

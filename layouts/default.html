@@ -18,7 +18,12 @@
     <link rel="stylesheet" href="{{ asset('css/photoswipe-default-skin.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/theme.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('css/custom.css', {dynamic: true}) }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('css/testu.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ asset('css/staile.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/sass/stylemarcas.css') }}">
+
+    <!--<link rel="stylesheet" href="{{ asset('css/slidestyle.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/slide.css') }}">-->
+
 
     <!-- tray scripts -->
     {{ tray.analytics }}
@@ -40,10 +45,10 @@
             {% element 'horizontal-nav' %}
         </div>
 
-        {% element 'snippets/banner-home' %}
+       <!-- {% element 'snippets/banner-home' %}
 
-        {% if pages.current == 'home' %}
-            <!--banner regua -->
+        <!--{% if pages.current == 'home' %}
+            <!--banner regua 
             {% if not utils.is_mobile and banner.extra1 %}
                 <div class="banner banner-ruler">
                     {{ banner.extra1 }}
@@ -55,7 +60,7 @@
                     </div>
                
             {% endif %}
-        {% endif %}
+        {% endif %} -->
 
         <main class="site-main container">
             {% if pages.current != 'home' or pages.current != 'product' %}
@@ -136,8 +141,11 @@
     <script src="{{ asset('js/photoswipe-ui.js') }}"></script>
     <script src="{{ asset('js/photoswipe-init.js') }}"></script>
     <script src="{{ asset('js/theme.min.js') }}"></script>
+    
     <script src="{{ asset('js/javas.js') }}"></script>
-
+    
+    <script src="{{ asset('css/sass/javamarcas.js') }}"></script>
+    <script src="{{ asset('js/slide.js') }}" defer></script>
 </body>
 </html>
 {% endspaceless %}

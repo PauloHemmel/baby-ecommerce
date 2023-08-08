@@ -1,0 +1,135 @@
+/* Import Google font - Poppins 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  padding: 0 35px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to left top, #031A9A, #8B53FF);
+}*/
+.wraper {
+  max-width: 1100px;
+  width: 100%;
+  position: relative;
+}
+.wraper i {
+  top: 50%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  position: absolute;
+  text-align: center;
+  line-height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wraper i:active{
+  transform: translateY(-50%) scale(0.85);
+}
+.wraper i:first-child{
+  left: -22px;
+}
+.wraper i:last-child{
+  right: -22px;
+}
+.wraper .carosso{
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% / 3) - 12px);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+.carosso::-webkit-scrollbar {
+  display: none;
+}
+.carosso.no-transition {
+  scroll-behavior: auto;
+}
+.carosso.dragging {
+  scroll-snap-type: none;
+  scroll-behavior: auto;
+}
+.carosso.dragging .cardume {
+  cursor: grab;
+  user-select: none;
+}
+.carosso :where(.cardume, .imge) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carosso .cardume {
+  scroll-snap-align: start;
+  height: 230px;
+  list-style: none;
+  background: #fff;
+  cursor: pointer;
+  padding-bottom: 1px;
+  flex-direction: column;
+  border-radius: 8px;
+}
+.carosso .cardume .imge {
+  background: #42a5b3;
+  height: 149px;
+  width: 149px;
+  border-radius: 50%;
+}
+.cardume .imge img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #fff;
+}
+
+
+.carosso .cardume h2 {
+  font-weight: 50;
+  font-family: Pacifico,cursive;
+  font-size: 2.00rem;
+  margin: 20px 0 5px;
+  color: #6A6D78;
+  
+}
+
+.teixto h1 {
+  font-weight: 700;
+  font-family: Roboto,sans-serif;
+  font-size: 2.50rem;
+  margin: 20px 0 5px;
+  color: #f1aece;
+  text-align: center;
+  
+}
+
+.carosso .cardume span {
+  color: #6A6D78;
+  font-size: 1.31rem;
+}
+
+@media screen and (max-width: 900px) {
+  .wraper .carosso {
+    grid-auto-columns: calc((100% / 3) - 9px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wraper .carosso {
+    grid-auto-columns: calc((100% / 2) - 6px);
+  }
+}
